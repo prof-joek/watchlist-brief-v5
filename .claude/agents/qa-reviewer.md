@@ -20,16 +20,17 @@ Structure
 
 Data integrity
 4. Every ticker in `WATCHLIST.tickers` has a `symbol`, `name`, `exchange`, and `why`.
-5. For every company in `BRIEF.companies`: `closes` is an array of at most five objects with
-   ISO `date` and numeric `close`, oldest first, dates strictly increasing; `latest` is
-   `null` or an object with `date`, `time`, and numeric `price`; `priceSource` is an https URL.
+5. For every company in `BRIEF.companies`: `closes` is an array of objects with ISO `date`
+   and numeric `close`, oldest first, dates strictly increasing, starting no earlier than
+   January 1 of the year of `BRIEF.asOf`; `latest` is `null` or an object with `date`,
+   `time`, and numeric `price`; `priceSource` is an https URL.
 6. `BRIEF.priceType` is `"close"` when every `latest` is null and `"intraday"` otherwise.
 7. Every news item has `date` (ISO), `headline`, `source`, `url` (https, not a search page),
    and `why`. Every news date is within seven days before `BRIEF.asOf`, inclusive.
 8. Every upcoming item has `date` (ISO, not before `BRIEF.asOf`), `event`, `source`, `url`.
 9. `CHANGELOG[0].date` is the newest date in the array, and every entry has `date`,
    `summary` (array of strings), and `note` (string, may be empty).
-10. No percentage for weekly change is typed anywhere in `BRIEF`. (It is computed by the page.)
+10. No percentage for YTD change is typed anywhere in `BRIEF`. (It is computed by the page.)
 11. `BRIEF.mode` is `"sample"` or `"live"`. If `"live"`, no headline or `why` contains the
     word "sample".
 

@@ -1,6 +1,6 @@
 ---
 name: refresh-brief
-description: The exact procedure for refreshing the watchlist brief with current prices, last week's news, and the next two weeks of scheduled events. Use whenever asked to refresh, update, or roll forward the brief. Changes BRIEF and CHANGELOG only.
+description: The exact procedure for refreshing the watchlist brief with current prices, year-to-date closes, last week's news, and the next two weeks of scheduled events. Use whenever asked to refresh, update, or roll forward the brief. Changes BRIEF and CHANGELOG only.
 ---
 
 # Refresh the brief
@@ -21,9 +21,11 @@ an honest note is fine.
 
 For each entry in `WATCHLIST.tickers`:
 
-1. Get the last five completed trading days of closing prices, oldest first. Preferred
-   sources, in order; stop at the first that works:
-   - `https://stockanalysis.com/stocks/TICKER/history/` (lower-case ticker, fetch the page)
+1. Get the year-to-date daily closing prices, from the first trading day of the current
+   calendar year through the last completed trading day, oldest first. Preferred sources,
+   in order; stop at the first that works:
+   - `https://stockanalysis.com/stocks/TICKER/history/` (lower-case ticker, fetch the page
+     and pull every row back to January of the current year)
    - `https://www.google.com/finance/quote/TICKER:EXCHANGE`
    - A web search for `TICKER stock price history` and the first reputable result
      (Nasdaq, Yahoo Finance, MarketWatch, WSJ).
@@ -32,10 +34,10 @@ For each entry in `WATCHLIST.tickers`:
    `BRIEF.priceType = "intraday"`. If the market is closed, set `latest: null` and
    `BRIEF.priceType = "close"`.
 3. Record the URL you actually used as `priceSource`. Record prices to two decimals.
-4. If you cannot get all five closes, record the ones you have (never pad, never estimate)
-   and write a line in the changelog entry saying which days are missing and why.
+4. If you cannot get the full year-to-date series, record the days you have (never pad,
+   never estimate) and write a line in the changelog entry saying what is missing and why.
 
-Never compute the weekly change. The page does that.
+Never compute the YTD change. The page does that.
 
 ## Step 2. News, last seven days
 

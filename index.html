@@ -167,15 +167,20 @@ footer p { margin: .2rem 0; }
 /* ===== DATA. The refresh-brief agent edits BRIEF and CHANGELOG only. ===== */
 
 const WATCHLIST = {
-  owner: "Your Name",
-  club: "SIBC",
+  owner: "Joe",
+  club: "Joe's Report",
   repo: "",
   tickers: [
-    { symbol: "NVDA", name: "NVIDIA", exchange: "NASDAQ", why: "The AI capex cycle in one ticker. If this moves, the whole list moves." },
-    { symbol: "JPM",  name: "JPMorgan Chase", exchange: "NYSE", why: "The bank every banking recruit should be able to talk about for five minutes." },
-    { symbol: "ACN",  name: "Accenture", exchange: "NYSE", why: "The consulting bellwether. Its bookings tell you how clients feel about spending." },
-    { symbol: "DE",   name: "Deere", exchange: "NYSE", why: "Midwest industrial. Farm income, tariffs, and rates all show up here." },
-    { symbol: "LLY",  name: "Eli Lilly", exchange: "NYSE", why: "Indiana's largest company and the GLP-1 story." }
+    { symbol: "LLY",  name: "Eli Lilly", exchange: "NYSE", why: "Indiana's largest company and the GLP-1 story." },
+    { symbol: "NVO",  name: "Novo Nordisk", exchange: "NYSE", why: "Lilly's main rival in GLP-1 obesity and diabetes drugs." },
+    { symbol: "JNJ",  name: "Johnson & Johnson", exchange: "NYSE", why: "The biggest diversified pharma, a bellwether for the whole sector." },
+    { symbol: "ABBV", name: "AbbVie", exchange: "NYSE", why: "Immunology giant managing the post-Humira patent cliff." },
+    { symbol: "MRK",  name: "Merck", exchange: "NYSE", why: "Keytruda is the best-selling cancer drug in the world; its patent cliff is a live story." },
+    { symbol: "PFE",  name: "Pfizer", exchange: "NYSE", why: "Still working through life after the COVID vaccine windfall." },
+    { symbol: "AZN",  name: "AstraZeneca", exchange: "NASDAQ", why: "Large European pharma with a fast-growing oncology and rare disease pipeline." },
+    { symbol: "AMGN", name: "Amgen", exchange: "NASDAQ", why: "Legacy biotech now also chasing the obesity drug market." },
+    { symbol: "GILD", name: "Gilead Sciences", exchange: "NASDAQ", why: "Dominant in HIV treatment, watched for its oncology expansion." },
+    { symbol: "REGN", name: "Regeneron", exchange: "NASDAQ", why: "Eylea franchise plus a deep antibody R&D pipeline." }
   ]
 };
 
@@ -325,7 +330,7 @@ function series(c) {
   if (c.latest) pts.push(c.latest.price);
   return pts;
 }
-function weekChange(c) {
+function ytdChange(c) {
   const pts = series(c);
   if (pts.length < 2 || !pts[0]) return null;
   return (pts[pts.length - 1] - pts[0]) / pts[0];
@@ -379,7 +384,7 @@ function renderTape() {
     if (!c || !series(c).length) {
       return '<li><div>' + sym + '</div>' + sparkline([], "flat") + '<div class="px"><span class="last flat">no data</span><span class="chg flat">not refreshed</span></div></li>';
     }
-    const pts = series(c), ch = weekChange(c), cls = dirClass(ch);
+    const pts = series(c), ch = ytdChange(c), cls = dirClass(ch);
     const chgText = ch === null ? "n/a" : (ch > 0 ? "+" : "") + (ch * 100).toFixed(1) + "%";
     return '<li><div>' + sym + '</div>' + sparkline(pts, cls) +
       '<div class="px"><span class="last">' + money(pts[pts.length - 1]) + '</span><span class="chg ' + cls + '">' + chgText + '</span></div></li>';

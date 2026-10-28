@@ -3,8 +3,8 @@
 ## What this is
 
 A single-page "Monday morning brief" for a small stock watchlist, published on GitHub Pages
-and refreshed by an agent. For each company it shows the last five trading days as a
-sparkline, the week's move, what happened in the news in the last seven days, and what is
+and refreshed by an agent. For each company it shows the year-to-date closes as a
+sparkline, the YTD move, what happened in the news in the last seven days, and what is
 on the calendar for the next two weeks (earnings, product events, Fed decisions, and so on).
 
 - The entire site is `index.html`. Nothing else is served.
@@ -29,7 +29,7 @@ on the calendar for the next two weeks (earnings, product events, Fed decisions,
    Every news item and calendar item has a source URL and a date. If something cannot be
    found, record it as missing (`null` or an empty list) and say so in the changelog entry.
    The page must render correctly with missing data.
-6. Weekly change is computed by the page from the closes in `BRIEF`; never type a percentage.
+6. YTD change is computed by the page from the closes in `BRIEF`; never type a percentage.
 7. The page must work on a phone (readable at 380px, no horizontal scroll, tap targets at
    least 44px) and print on one or two pages as a clean brief.
 

@@ -16,9 +16,9 @@ serve it is removed.
 1. **Masthead**: title, the watchlist owner's name, "As of" date, price type (close or
    intraday with the time), and a sample-data banner when `BRIEF.mode === "sample"`.
 2. **The tape**: one row per ticker. Ticker and company name on the left, a sparkline of the
-   closes in the middle (plus the intraday point if present), last price and weekly change
-   on the right. Up is green, down is red, flat or missing is grey. This is the signature
-   element of the page; keep it clean.
+   year-to-date closes in the middle (plus the intraday point if present), last price and
+   YTD change on the right. Up is green, down is red, flat or missing is grey. This is the
+   signature element of the page; keep it clean.
 3. **Per-company sections**: for each ticker, "What happened" (up to three dated news
    items, each with a source link and a one-line "why it matters") and "Coming up" (dated
    events inside the next two weeks with a source link). Empty lists render a short grey
@@ -50,7 +50,7 @@ const BRIEF = {
   priceType: "close",      // "close" or "intraday"
   companies: {
     NVDA: {
-      closes: [ { date: "2026-10-13", close: 100.00 }, /* five trading days, oldest first */ ],
+      closes: [ { date: "2026-01-02", close: 100.00 }, /* every trading day from Jan 1, oldest first */ ],
       latest: null,        // { date, time, price } when priceType is "intraday", else null
       priceSource: "https://...",
       news: [ { date: "2026-10-15", headline: "...", source: "Reuters", url: "https://...", why: "..." } ],
@@ -66,11 +66,12 @@ const CHANGELOG = [
 
 Rules the code enforces:
 
-- Weekly change is `(last - first) / first` over the `closes` array, using `latest.price`
-  as `last` when present. Never typed by hand.
-- Missing data is allowed everywhere: `closes` may be shorter than five, `latest` may be
-  `null`, `news` and `upcoming` may be empty, a ticker may be in `WATCHLIST` with no entry
-  in `BRIEF.companies`. The page says what is missing in plain words.
+- YTD change is `(last - first) / first` over the `closes` array, using `latest.price`
+  as `last` when present and the first close of the year as `first`. Never typed by hand.
+- Missing data is allowed everywhere: `closes` may be shorter than a full year-to-date,
+  `latest` may be `null`, `news` and `upcoming` may be empty, a ticker may be in
+  `WATCHLIST` with no entry in `BRIEF.companies`. The page says what is missing in plain
+  words.
 - Dates are formatted by the page from ISO strings. Do not type formatted dates in data.
 
 ## Style
