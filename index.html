@@ -185,88 +185,167 @@ const WATCHLIST = {
 };
 
 const BRIEF = {
-  mode: "sample",
-  asOf: "2026-10-16",
-  retrievedAt: "2026-10-16T16:30:00-04:00",
+  mode: "live",
+  asOf: "2026-10-27",
+  retrievedAt: "2026-10-28T12:30:00-04:00",
   priceType: "close",
   companies: {
-    NVDA: {
-      closes: [
-        { date: "2026-10-12", close: 100.00 },
-        { date: "2026-10-13", close: 101.40 },
-        { date: "2026-10-14", close: 99.80 },
-        { date: "2026-10-15", close: 103.10 },
-        { date: "2026-10-16", close: 104.20 }
-      ],
-      latest: null,
-      priceSource: "https://example.com/sample",
-      news: [
-        { date: "2026-10-15", headline: "Sample headline. Run the refresh-brief agent to replace this.", source: "Sample", url: "https://example.com/sample", why: "Sample. The agent writes one plain sentence here on why the item matters to the stock." }
-      ],
-      upcoming: [
-        { date: "2026-10-28", event: "Sample event (replace by refreshing)", source: "Sample", url: "https://example.com/sample" }
-      ]
-    },
-    JPM: {
-      closes: [
-        { date: "2026-10-12", close: 100.00 },
-        { date: "2026-10-13", close: 99.30 },
-        { date: "2026-10-14", close: 98.90 },
-        { date: "2026-10-15", close: 98.20 },
-        { date: "2026-10-16", close: 97.60 }
-      ],
-      latest: null,
-      priceSource: "https://example.com/sample",
-      news: [
-        { date: "2026-10-14", headline: "Sample headline. Run the refresh-brief agent to replace this.", source: "Sample", url: "https://example.com/sample", why: "Sample." }
-      ],
-      upcoming: []
-    },
-    ACN: {
-      closes: [
-        { date: "2026-10-12", close: 100.00 },
-        { date: "2026-10-13", close: 100.20 },
-        { date: "2026-10-14", close: 99.90 },
-        { date: "2026-10-15", close: 100.10 },
-        { date: "2026-10-16", close: 100.05 }
-      ],
-      latest: null,
-      priceSource: "https://example.com/sample",
-      news: [],
-      upcoming: [
-        { date: "2026-10-22", event: "Sample event (replace by refreshing)", source: "Sample", url: "https://example.com/sample" }
-      ]
-    },
-    DE: {
-      closes: [
-        { date: "2026-10-12", close: 100.00 },
-        { date: "2026-10-13", close: 102.50 },
-        { date: "2026-10-14", close: 101.80 },
-        { date: "2026-10-15", close: 103.90 },
-        { date: "2026-10-16", close: 102.70 }
-      ],
-      latest: null,
-      priceSource: "https://example.com/sample",
-      news: [
-        { date: "2026-10-13", headline: "Sample headline. Run the refresh-brief agent to replace this.", source: "Sample", url: "https://example.com/sample", why: "Sample." }
-      ],
-      upcoming: []
-    },
     LLY: {
       closes: [
-        { date: "2026-10-12", close: 100.00 },
-        { date: "2026-10-13", close: 98.70 },
-        { date: "2026-10-14", close: 99.60 },
-        { date: "2026-10-15", close: 101.30 },
-        { date: "2026-10-16", close: 102.90 }
+        { date: "2026-10-21", close: 1270.75 },
+        { date: "2026-10-22", close: 1306.69 },
+        { date: "2026-10-23", close: 1273.46 },
+        { date: "2026-10-26", close: 1279.14 },
+        { date: "2026-10-27", close: 1281.91 }
       ],
       latest: null,
-      priceSource: "https://example.com/sample",
+      priceSource: "https://stockanalysis.com/stocks/lly/history/",
       news: [
-        { date: "2026-10-16", headline: "Sample headline. Run the refresh-brief agent to replace this.", source: "Sample", url: "https://example.com/sample", why: "Sample." }
+        { date: "2026-10-25", headline: "3 Massive Catalysts That Could Ignite an Eli Lilly Stock Rally on Oct 29", source: "24/7 Wall St.", url: "https://247wallst.com/investing/2026/10/25/3-massive-catalysts-that-could-ignite-an-eli-lilly-stock-rally-on-oct-29/", why: "Previews Lilly's Q3 earnings, flagging whether management raises guidance again and how Zepbound volume offsets falling US net price." }
       ],
       upcoming: [
-        { date: "2026-10-30", event: "Sample event (replace by refreshing)", source: "Sample", url: "https://example.com/sample" }
+        { date: "2026-10-29", event: "Q3 2026 earnings release and conference call, 10:00 a.m. ET", source: "Lilly Investor Relations", url: "https://lilly.gcs-web.com/news-releases/news-release-details/lilly-confirms-date-and-conference-call-third-quarter-2026" }
+      ]
+    },
+    NVO: {
+      closes: [
+        { date: "2026-10-21", close: 39.06 },
+        { date: "2026-10-22", close: 39.43 },
+        { date: "2026-10-23", close: 39.05 },
+        { date: "2026-10-26", close: 39.13 },
+        { date: "2026-10-27", close: 38.67 }
+      ],
+      latest: null,
+      priceSource: "https://stockanalysis.com/stocks/nvo/history/",
+      news: [],
+      upcoming: [
+        { date: "2026-11-04", event: "Financial results for the first nine months of 2026", source: "Novo Nordisk SEC Form 6-K", url: "https://www.sec.gov/Archives/edgar/data/0000353278/000035327826000023/caq22026.htm" }
+      ]
+    },
+    JNJ: {
+      closes: [
+        { date: "2026-10-21", close: 257.78 },
+        { date: "2026-10-22", close: 267.61 },
+        { date: "2026-10-23", close: 263.81 },
+        { date: "2026-10-26", close: 266.30 },
+        { date: "2026-10-27", close: 268.73 }
+      ],
+      latest: null,
+      priceSource: "https://stockanalysis.com/stocks/jnj/history/",
+      news: [],
+      upcoming: []
+    },
+    ABBV: {
+      closes: [
+        { date: "2026-10-21", close: 284.80 },
+        { date: "2026-10-22", close: 285.19 },
+        { date: "2026-10-23", close: 285.64 },
+        { date: "2026-10-26", close: 286.74 },
+        { date: "2026-10-27", close: 286.39 }
+      ],
+      latest: null,
+      priceSource: "https://stockanalysis.com/stocks/abbv/history/",
+      news: [
+        { date: "2026-10-27", headline: "AbbVie Submits Biologics License Application (BLA) for Etentamig to U.S. FDA for Adults Living With Relapsed/Refractory Multiple Myeloma", source: "AbbVie newsroom", url: "https://news.abbvie.com/2026-10-27-AbbVie-Submits-Biologics-License-Application-BLA-for-Etentamig-to-U-S-FDA-for-Adults-Living-With-Relapsed-Refractory-Multiple-Myeloma", why: "A BLA filing for a new multiple myeloma antibody drug is a step toward a new revenue source as AbbVie manages the post-Humira transition." },
+        { date: "2026-10-27", headline: "Allergan Aesthetics Announces 2026 Grant Recipients of The Confidence Collective, Funded by BOTOX® Cosmetic", source: "AbbVie newsroom", url: "https://news.abbvie.com/2026-10-27-Allergan-Aesthetics-Announces-2026-Grant-Recipients-of-The-Confidence-Collective,-Funded-by-BOTOX-R-Cosmetic-onabotulinumtoxinA", why: "Routine marketing and philanthropy news for the aesthetics unit; limited direct stock impact." },
+        { date: "2026-10-28", headline: "The Countdown Is On: BOTOX® Cosmetic (onabotulinumtoxinA) Day is Back Nov. 18", source: "AbbVie newsroom", url: "https://news.abbvie.com/2026-10-28-The-Countdown-Is-On-BOTOX-R-Cosmetic-onabotulinumtoxinA-Day-is-Back-Nov-18", why: "A recurring consumer promotion for BOTOX Cosmetic; routine, not a fundamental catalyst." }
+      ],
+      upcoming: [
+        { date: "2026-10-30", event: "Q3 2026 earnings release, before market open; webcast 8:00 a.m. CT", source: "AbbVie newsroom", url: "https://news.abbvie.com/2026-10-01-AbbVie-to-Host-Third-Quarter-2026-Earnings-Conference-Call" }
+      ]
+    },
+    MRK: {
+      closes: [
+        { date: "2026-10-21", close: 149.88 },
+        { date: "2026-10-22", close: 147.24 },
+        { date: "2026-10-23", close: 145.27 },
+        { date: "2026-10-26", close: 140.61 },
+        { date: "2026-10-27", close: 141.82 }
+      ],
+      latest: null,
+      priceSource: "https://stockanalysis.com/stocks/mrk/history/",
+      news: [],
+      upcoming: [
+        { date: "2026-10-29", event: "Q3 2026 sales and earnings conference call, 9:00 a.m. ET", source: "Merck newsroom", url: "https://www.merck.com/news/merck-to-hold-third-quarter-2026-sales-and-earnings-conference-call-oct-29/" }
+      ]
+    },
+    PFE: {
+      closes: [
+        { date: "2026-10-21", close: 29.85 },
+        { date: "2026-10-22", close: 30.42 },
+        { date: "2026-10-23", close: 30.03 },
+        { date: "2026-10-26", close: 29.79 },
+        { date: "2026-10-27", close: 29.80 }
+      ],
+      latest: null,
+      priceSource: "https://stockanalysis.com/stocks/pfe/history/",
+      news: [],
+      upcoming: [
+        { date: "2026-11-03", event: "Q3 2026 Performance Report and analyst webcast, 10:00 a.m. EST", source: "Pfizer (via Finviz copy of company release)", url: "https://finviz.com/news/394367/pfizer-invites-public-to-view-and-listen-to-webcast-of-november-3-conference-call-with-analysts" }
+      ]
+    },
+    AZN: {
+      closes: [
+        { date: "2026-10-21", close: 168.45 },
+        { date: "2026-10-22", close: 172.57 },
+        { date: "2026-10-23", close: 171.49 },
+        { date: "2026-10-26", close: 172.06 },
+        { date: "2026-10-27", close: 170.08 }
+      ],
+      latest: null,
+      priceSource: "https://stockanalysis.com/stocks/azn/history/",
+      news: [
+        { date: "2026-10-19", headline: "AstraZeneca to present overall survival data from four pivotal Phase III trials in Presidential Symposia at ESMO 2026", source: "AstraZeneca media centre", url: "https://www.astrazeneca.com/media-centre/press-releases/2026/astrazeneca-present-survival-data-from-four-pivotal-phase-iii-trials-at-esmo-2026-featuring-sone-ve-imfinzi-tagrisso-orpathys.html", why: "Overall-survival wins across four late-stage oncology trials, including Imfinzi and Tagrisso combinations, support the oncology franchise that drives much of AstraZeneca's growth." }
+      ],
+      upcoming: [
+        { date: "2026-10-30", event: "9-month and Q3 2026 results, before US market open", source: "AstraZeneca half-year report (via Investegate)", url: "https://www.investegate.co.uk/announcement/rns/astrazeneca--azn/half-year-financial-report/9687613" }
+      ]
+    },
+    AMGN: {
+      closes: [
+        { date: "2026-10-21", close: 438.34 },
+        { date: "2026-10-22", close: 447.28 },
+        { date: "2026-10-23", close: 439.26 },
+        { date: "2026-10-26", close: 444.63 },
+        { date: "2026-10-27", close: 447.95 }
+      ],
+      latest: null,
+      priceSource: "https://stockanalysis.com/stocks/amgn/history/",
+      news: [
+        { date: "2026-10-24", headline: "IMDELLTRA in Combination With IMFINZI Reduced Risk of Death by an Unprecedented 58% in First-Line Extensive-Stage Small Cell Lung Cancer", source: "Amgen newsroom", url: "https://www.amgen.com/newsroom/press-releases/2026/10/imdelltra-in-combination-with-imfinzi-reduced-risk-of-death-by-an-unprecedented-58-in-firstline-extensive-stage-small-cell-lung-cancer", why: "A large survival benefit in a Phase 3 lung cancer trial strengthens Amgen's oncology pipeline beyond its legacy biosimilar and bone-health businesses." }
+      ],
+      upcoming: [
+        { date: "2026-11-03", event: "Q3 2026 earnings conference call, expected (date not yet confirmed by Amgen's own newsroom)", source: "TheRightTrader earnings calendar", url: "https://therighttrader.com/earnings-calendar/amgn" }
+      ]
+    },
+    GILD: {
+      closes: [
+        { date: "2026-10-21", close: 153.57 },
+        { date: "2026-10-22", close: 157.19 },
+        { date: "2026-10-23", close: 156.04 },
+        { date: "2026-10-26", close: 158.69 },
+        { date: "2026-10-27", close: 159.08 }
+      ],
+      latest: null,
+      priceSource: "https://stockanalysis.com/stocks/gild/history/",
+      news: [],
+      upcoming: [
+        { date: "2026-10-29", event: "Q3 2026 financial results, after market close; webcast 4:30 p.m. ET", source: "Gilead Sciences newsroom", url: "https://www.gilead.com/news/news-details/2026/gilead-sciences-to-release-third-quarter-2026-financial-results-on-thursday-october-29-2026" }
+      ]
+    },
+    REGN: {
+      closes: [
+        { date: "2026-10-21", close: 805.67 },
+        { date: "2026-10-22", close: 819.09 },
+        { date: "2026-10-23", close: 805.02 },
+        { date: "2026-10-26", close: 807.67 },
+        { date: "2026-10-27", close: 816.10 }
+      ],
+      latest: null,
+      priceSource: "https://stockanalysis.com/stocks/regn/history/",
+      news: [],
+      upcoming: [
+        { date: "2026-10-30", event: "Q3 2026 financial and operating results, before market open; webcast 8:30 a.m. ET", source: "Regeneron (via Finviz copy of company release)", url: "https://finviz.com/news/395385/regeneron-to-report-third-quarter-2026-financial-and-operating-results-and-host-conference-call-and-webcast-on-october-30-2026" }
       ]
     }
   }
@@ -274,12 +353,21 @@ const BRIEF = {
 
 const CHANGELOG = [
   {
-    date: "2026-10-16",
+    date: "2026-10-28",
     summary: [
-      "Sample data loaded. No real prices or news yet.",
-      "Run the refresh-brief agent to replace everything above with real, sourced data."
+      "Watchlist composition changed to a biopharma focus: LLY, NVO, JNJ, ABBV, MRK, PFE, AZN, AMGN, GILD, REGN replace the prior NVDA/JPM/ACN/DE/LLY list. All BRIEF data below is newly refreshed for the new list; nothing carried over from the old tickers.",
+      "LLY 1270.75 to 1281.91 (Oct 21 to Oct 27) ahead of Q3 earnings due Oct 29; coverage previews whether Lilly raises guidance again.",
+      "NVO 39.06 to 38.67 (Oct 21 to Oct 27); no news dated within the last seven days was found, so the news list is empty.",
+      "JNJ 257.78 to 268.73 (Oct 21 to Oct 27); no news within the last seven days and no scheduled event in the next two weeks were found.",
+      "ABBV 284.80 to 286.39 (Oct 21 to Oct 27) on an Etentamig BLA filing with the FDA; Q3 earnings due Oct 30.",
+      "MRK 149.88 to 141.82 (Oct 21 to Oct 27); no major news found in the window; Q3 earnings call set for Oct 29.",
+      "PFE 29.85 to 29.80 (Oct 21 to Oct 27); no major news found in the window; Q3 report due Nov 3.",
+      "AZN 168.45 to 170.08 (Oct 21 to Oct 27) on positive overall-survival data across four Phase III oncology trials presented around ESMO 2026; 9-month/Q3 results due Oct 30.",
+      "AMGN 438.34 to 447.95 (Oct 21 to Oct 27) on a 58% reduction in risk of death in a Phase 3 lung cancer trial for IMDELLTRA plus Imfinzi; Q3 earnings expected Nov 3 but not yet confirmed on Amgen's own newsroom.",
+      "GILD 153.57 to 159.08 (Oct 21 to Oct 27); no major news found in the window; Q3 results due Oct 29 after the close.",
+      "REGN 805.67 to 816.10 (Oct 21 to Oct 27); no major news found in the window; Q3 results due Oct 30."
     ],
-    note: "This entry is a placeholder. The agent adds a new entry on top at every refresh."
+    note: "Market was open intraday at the time of this refresh, so all closes stop at Oct 27 (the last completed session) and priceType is \"close\" with latest left null for every ticker, for consistency across the list. Verify by hand: the Amgen Nov 3 earnings date (source is a third-party calendar, not Amgen's own newsroom, which returned a 403 error on fetch); the Pfizer and Regeneron calendar sources, which are Finviz copies of the companies' releases because the companies' own investor-relations pages returned 403 errors; and the AbbVie/AstraZeneca/JNJ/Merck/Novo items, all taken from primary company or SEC sources. No news items dated in the last seven days were found for NVO, JNJ, MRK, PFE, GILD, or REGN despite repeated searches; their news lists are empty by design, not by omission. No scheduled event in the next two weeks was found for JNJ."
   }
 ];
 
